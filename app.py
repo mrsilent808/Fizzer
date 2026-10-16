@@ -32,7 +32,7 @@ HTML_TEMPLATE = """
             <input type="text" name="url" placeholder="Paste YouTube URL here..." required>
             <button type="submit">Download Now</button>
         </form>
-        <div class="footer">Hosted on Hugging Face Spaces | 100% Free</div>
+        <div class="footer">Hosted on Railway | 100% Free</div>
     </div>
 </body>
 </html>
@@ -49,6 +49,7 @@ def index():
             'format': 'best',
             'outtmpl': os.path.join(DOWNLOAD_FOLDER, '%(title)s.%(ext)s'),
             'noplaylist': True,
+            'extractor_args': {'youtube': {'player_client': ['android']}},
         }
         
         try:
@@ -62,4 +63,4 @@ def index():
     return render_template_string(HTML_TEMPLATE)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=7860)
+    app.run(host='0.0.0.0', port=8080)
