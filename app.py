@@ -49,7 +49,7 @@ def index():
             'format': 'best',
             'outtmpl': os.path.join(DOWNLOAD_FOLDER, '%(title)s.%(ext)s'),
             'noplaylist': True,
-            'extractor_args': {'youtube': {'player_client': ['android_creator', 'web']}},
+            'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
         }
         
         try:
@@ -63,5 +63,5 @@ def index():
     return render_template_string(HTML_TEMPLATE)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
-    
+    app.run(host='0.0.0.0', port=
+8080)
